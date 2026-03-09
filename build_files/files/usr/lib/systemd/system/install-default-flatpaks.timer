@@ -1,0 +1,8 @@
+[Unit]
+Description=Run default Flatpak installer shortly after boot
+
+[Timer]
+OnBootSec=30
+
+[Install]
+WantedBy=timers.target

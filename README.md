@@ -1,3 +1,13 @@
+Custom Fedora Sway Atomic image built using [`ublue-os/image-template`](https://github.com/ublue-os/image-template).
+
+### Files changed from the template
+- **Containerfile**: sets the base image to Fedora Sway Atomic and runs `build.sh`
+- **build.sh**: main build customization script for installing packages and configuring the image
+- **build.yml**: the `env:` section defines image metadata such as `IMAGE_DESC`, `IMAGE_KEYWORDS`, and related values
+
+The Flatpak boot-time installation approach in this repo is loosely inspired by
+BlueBuild’s `default-flatpaks` module: https://github.com/blue-build/modules/tree/main/modules/default-flatpaks/v2
+
 # image-template
 
 This repository is meant to be a template for building your own custom [bootc](https://github.com/bootc-dev/bootc) image. This template is the recommended way to make customizations to any image published by the Universal Blue Project.
