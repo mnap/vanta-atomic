@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -ouex pipefail
 
 ### Install packages
@@ -15,6 +14,7 @@ dnf5 config-manager addrepo \
   --overwrite
 dnf5 install -y tailscale
 rm -f /etc/yum.repos.d/tailscale.repo
+systemctl enable tailscaled.service
 
 ## install ffmpeg and codecs from RPM Fusion
 # see: https://rpmfusion.org/Howto/OSTree
@@ -45,26 +45,20 @@ PACKAGES=(
     syncthing
     thunderbird
     libxcrypt-compat # needed to make biber (texlive) work
-    NetworkManager-tui # nmtui
-    tldr # help/cheat sheets
-    flameshot # screenshot
-    fastfetch # system info
-    restic # backup tool
-    ncdu # disk usage
-    trash-cli # delete by moving to trash
     fuse-sshfs # sshfs
-    rclone # cloudn storage sync
+    rclone # cloud storage and sync
+    restic # backup tool
     wl-mirror # mirror screen/output
-    nodejs # for npm
+    NetworkManager-tui # nmtui
+    flameshot # screenshot
+    trash-cli # delete by moving to trash
+    fastfetch # system info
 )
 dnf5 install -y "${PACKAGES[@]}"
 
 # clean caches
 dnf5 clean all
 
-
-### Enable services
-systemctl enable tailscaled.service
 
 ### Set up install of Flatpak packages at boot
 source /ctx/default-flatpaks.sh
