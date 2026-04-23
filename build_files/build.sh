@@ -53,6 +53,7 @@ PACKAGES=(
     flameshot # screenshot
     trash-cli # delete by moving to trash
     fastfetch # system info
+    wayvnc # VNC/remote desktop
 )
 dnf5 install -y "${PACKAGES[@]}"
 
