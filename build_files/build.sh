@@ -75,6 +75,7 @@ FLATPAKS=(
     net.ankiweb.Anki
     org.keepassxc.KeePassXC
     us.zoom.Zoom
+    com.github.jeromerobert.pdfarranger
     com.brave.Browser
     com.github.tchx84.Flatseal
     com.github.xournalpp.xournalpp
