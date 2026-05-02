@@ -21,6 +21,13 @@ systemctl enable tailscaled.service
 dnf5 install -y \
   https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
   https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# Enable stable RPM Fusion repos; disable Rawhide if present
+dnf5 config-manager setopt \
+  rpmfusion-free.enabled=1 \
+  rpmfusion-free-updates.enabled=1 \
+  rpmfusion-nonfree.enabled=1 \
+  rpmfusion-nonfree-updates.enabled=1
+dnf5 config-manager setopt 'rpmfusion-*-rawhide.enabled=0' || :
 # software codecs
 dnf5 install -y \
   gstreamer1-plugin-libav \
