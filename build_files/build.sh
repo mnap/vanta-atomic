@@ -61,6 +61,7 @@ PACKAGES=(
     trash-cli # delete by moving to trash
     fastfetch # system info
     wayvnc # VNC/remote desktop
+    wtype # simulate keyboard input
 )
 dnf5 install -y "${PACKAGES[@]}"
 
