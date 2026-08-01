@@ -51,13 +51,13 @@ PACKAGES=(
     bfs
     syncthing
     thunderbird
+    tmux
     libxcrypt-compat # needed to make biber (texlive) work
     fuse-sshfs # sshfs
     rclone # cloud storage and sync
     restic # backup tool
     wl-mirror # mirror screen/output
     NetworkManager-tui # nmtui
-    flameshot # screenshot
     trash-cli # delete by moving to trash
     fastfetch # system info
     wayvnc # VNC/remote desktop
